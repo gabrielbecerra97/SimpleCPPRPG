@@ -3,6 +3,7 @@
 #include <string>
 #include <chrono>
 #include <thread>
+#include "headers/SaveFileHandler.h"
 
 using namespace std;
 
@@ -11,7 +12,6 @@ void output (string outputString) {
 
     this_thread::sleep_for(duration);
     cout << outputString;
-    cout << "\n";
     this_thread::sleep_for(duration);
 }
 
@@ -30,15 +30,15 @@ string input() {
 }
 
 void newGameOption () {
-    output("Starting a new game");
+    output("Starting a new game\n");
 }
 
 void loadGameOption () {
-    output("Loading from save file");
+    output("Loading from save file\n");
 }
 
 void exitOption () {
-    output("Bye, you prick!");
+    output("Bye, you prick!\n");
 }
 
 
@@ -59,7 +59,7 @@ void displayMainMenu () {
     mainMenu += "\n\nPlease type the option number:";
     mainMenu += "\n\t[1] New game";
     mainMenu += "\n\t[2] Load game";
-    mainMenu += "\n\t[3] Exit";
+    mainMenu += "\n\t[3] Exit\n";
     
     cout << mainMenu;
     //endregion
